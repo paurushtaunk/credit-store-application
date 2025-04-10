@@ -1,0 +1,22 @@
+.headshot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    background-color: #fbe9d0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.signin {
+    padding: 10px 20px;
+    background-color: #fbe9d0;
+    color: #0d0909;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

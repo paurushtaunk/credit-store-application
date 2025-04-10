@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="creditCardForm">
+    <div>
+      <label for="cardNumber">Card Number:</label>
+      <input id="cardNumber" formControlName="cardNumber" required>
+    </div>
+  
+    <div>
+      <label for="expiryDate">Expiry Date:</label>
+      <input id="expiryDate" formControlName="expiryDate" required>
+    </div>
+  
+    <div>
+      <label for="cvv">CVV:</label>
+      <input id="cvv" formControlName="cvv" required>
+    </div>
+  
+    <button type="submit">Submit</button>
+    <button (click)="goToHome()">Cancel</button>
+  </form>
