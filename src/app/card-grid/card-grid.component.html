@@ -2,6 +2,7 @@
 <table>
     <thead>
         <tr>
+            <th>Select</th>
             <th>Card Number</th>
             <th>Expiry Date</th>
             <th>CVV</th>
@@ -9,6 +10,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let card of cards">
+            <td><input type="checkbox" [(ngModel)]="card.selected" /></td>
             <td>{{ card.cardNumber }}</td>
             <td>{{ card.expiryDate }}</td>
             <td>{{ card.cvv }}</td>

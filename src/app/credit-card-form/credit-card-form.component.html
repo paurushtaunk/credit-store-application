@@ -1,19 +1,24 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="creditCardForm">
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="creditCardForm">
     <div>
       <label for="cardNumber">Card Number:</label>
-      <input id="cardNumber" formControlName="cardNumber" required>
+      <input id="cardNumber" [(ngModel)]="cardNumber" maxlength="12" formControlName="cardNumber"
+        placeholder="XXXX-XXXX-XXXX-XXXX" required>
     </div>
-  
+
     <div>
       <label for="expiryDate">Expiry Date:</label>
-      <input id="expiryDate" formControlName="expiryDate" required>
+      <input id="expiryDate" [(ngModel)]="expiry" formControlName="expiryDate" placeholder="MM/YY" required>
     </div>
-  
+
     <div>
       <label for="cvv">CVV:</label>
-      <input id="cvv" formControlName="cvv" required>
+      <input id="cvv" [(ngModel)]="cvv" maxlength="3" formControlName="cvv" placeholder="XXX" required>
     </div>
-  
-    <button type="submit">Submit</button>
-    <button (click)="goToHome()">Cancel</button>
+    <div class="button-wrapper">
+    <button (click)="customPopup.openPopup()" type="submit">Confirm Details</button>
+    <app-minor-popup #customPopup [formData]="creditCardForm.value" (formsubmitted)="resetForm()"></app-minor-popup>
+    <button (click)="goToHome()">Go Back</button>
+  </div>
   </form>
+</div>

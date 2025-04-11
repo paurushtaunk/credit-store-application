@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     { path: '', component: CardGridComponent },
+    { path: 'new', component: CardGridComponent },
     { path: 'add-a-card', component: CreditCardFormComponent }
   ];
   @NgModule({
